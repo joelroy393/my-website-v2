@@ -1,0 +1,108 @@
+/* =========================================
+   responsive.css — mobile & tablet breakpoints
+   ========================================= */
+
+/* ---- Tablet (≤ 900px) ---- */
+@media (max-width: 900px) {
+  .cards-grid {
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  }
+
+  .about-wrap {
+    grid-template-columns: 1fr;
+  }
+
+  .about-img-area {
+    margin-bottom: var(--space-md);
+  }
+}
+
+/* ---- Mobile (≤ 768px) ---- */
+@media (max-width: 768px) {
+
+  /* Nav — show hamburger, hide links by default */
+  .nav-toggle {
+    display: flex;
+  }
+
+  .nav-links {
+    display: none;
+    position: absolute;
+    top: var(--nav-height);
+    left: 0;
+    right: 0;
+    flex-direction: column;
+    gap: 0.25rem;
+    padding: var(--space-md) var(--space-xl);
+    background: rgba(13, 11, 20, 0.95);
+    backdrop-filter: blur(20px);
+    border-bottom: 1px solid var(--color-border);
+    border-radius: 0 0 20px 20px;
+    z-index: 99;
+  }
+
+  .nav-links.open {
+    display: flex;
+  }
+
+  .nav-links a {
+    padding: 0.6rem var(--space-md);
+  }
+
+  /* Hero */
+  .stats-row {
+    gap: var(--space-md);
+  }
+
+  /* Portfolio */
+  .cards-grid {
+    grid-template-columns: 1fr;
+  }
+
+  /* Blog */
+  .blog-card {
+    grid-template-columns: auto 1fr;
+    grid-template-rows: auto auto;
+  }
+
+  .blog-read {
+    grid-column: 2;
+  }
+
+  /* Contact */
+  .field-group {
+    grid-template-columns: 1fr;
+  }
+
+  /* About */
+  .about-blob-frame,
+  .about-photo {
+    width: 200px;
+    height: 200px;
+  }
+}
+
+/* ---- Small mobile (≤ 480px) ---- */
+@media (max-width: 480px) {
+  section {
+    padding: var(--space-2xl) var(--space-md);
+  }
+
+  .hero-pills {
+    gap: 0.5rem;
+  }
+
+  .pill {
+    font-size: 11px;
+    padding: 4px 12px;
+  }
+
+  .contact-form {
+    padding: 1.5rem;
+  }
+
+  .ctf-banner {
+    flex-direction: column;
+    text-align: center;
+  }
+}

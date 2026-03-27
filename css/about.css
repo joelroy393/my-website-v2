@@ -1,0 +1,127 @@
+/* =========================================
+   about.css — about / bio section
+   ========================================= */
+
+#about {
+  background: rgba(0, 0, 0, 0.20);
+}
+
+.about-wrap {
+  display: grid;
+  grid-template-columns: 1fr 1.4fr;
+  gap: var(--space-2xl);
+  align-items: start;
+}
+
+/* Left column — photo + quick facts */
+.about-img-area {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+/* Swap this for an <img> once you have a photo */
+.about-blob-frame {
+  width: 260px;
+  height: 260px;
+  background: linear-gradient(
+    135deg,
+    rgba(109, 40, 217, 0.40),
+    rgba(190, 24,  93, 0.30),
+    rgba(6,  78,  59, 0.30)
+  );
+  border: 1px solid rgba(167, 139, 250, 0.20);
+  border-radius: 60% 40% 55% 45% / 45% 55% 40% 60%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-display);
+  font-size: 15px;
+  color: var(--color-accent);
+  text-align: center;
+  padding: var(--space-xl);
+  backdrop-filter: blur(10px);
+  animation: morphBlob 8s ease-in-out infinite;
+}
+
+/* Real photo once you add one */
+.about-photo {
+  width: 260px;
+  height: 260px;
+  object-fit: cover;
+  border-radius: 60% 40% 55% 45% / 45% 55% 40% 60%;
+  border: 2px solid rgba(167, 139, 250, 0.30);
+  animation: morphBlob 8s ease-in-out infinite;
+}
+
+@keyframes morphBlob {
+  0%   { border-radius: 60% 40% 55% 45% / 45% 55% 40% 60%; }
+  33%  { border-radius: 40% 60% 45% 55% / 55% 45% 60% 40%; }
+  66%  { border-radius: 55% 45% 60% 40% / 40% 60% 45% 55%; }
+  100% { border-radius: 60% 40% 55% 45% / 45% 55% 40% 60%; }
+}
+
+/* Quick-fact chips */
+.about-facts {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  width: 100%;
+}
+
+.about-fact {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 14px;
+  padding: 0.6rem var(--space-md);
+  font-size: 13px;
+  color: var(--color-ink-2);
+}
+
+/* Right column — text */
+.about-body {
+  font-size: 14px;
+  color: var(--color-ink-2);
+  line-height: 1.9;
+  margin-bottom: var(--space-md);
+}
+
+/* Hobby pills */
+.hobbies-bubbles {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: var(--space-md);
+}
+
+.hobby-pill {
+  background: rgba(244, 114, 182, 0.10);
+  border: 1px solid rgba(244, 114, 182, 0.20);
+  border-radius: var(--radius-full);
+  padding: 5px 14px;
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--color-accent-2);
+}
+
+/* Artist / misc bubbles */
+.skills-bubbles {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: var(--space-md);
+}
+
+.skill-bubble {
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.10);
+  border-radius: var(--radius-full);
+  padding: 6px 16px;
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--color-ink-2);
+}

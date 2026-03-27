@@ -1,0 +1,155 @@
+/* =========================================
+   hero.css — hero / landing section
+   ========================================= */
+
+.hero {
+  min-height: 90vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+  padding: var(--space-3xl) var(--space-xl) var(--space-2xl);
+  gap: 0;
+}
+
+/* "Open to roles" badge */
+.hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(167, 139, 250, 0.12);
+  border: 1px solid rgba(167, 139, 250, 0.25);
+  border-radius: var(--radius-full);
+  padding: 6px 18px;
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--color-accent);
+  letter-spacing: 0.06em;
+  margin-bottom: 1.8rem;
+}
+
+/* Big name */
+.hero-title {
+  font-family: var(--font-display);
+  font-size: clamp(52px, 9vw, 108px);
+  line-height: 1.05;
+  color: var(--color-ink);
+  margin-bottom: 0.6rem;
+}
+
+.hero-title .wave {
+  background: linear-gradient(135deg, var(--color-accent) 0%, var(--color-accent-2) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Subtitle */
+.hero-sub {
+  font-size: clamp(13px, 2vw, 16px);
+  color: var(--color-ink-2);
+  max-width: 540px;
+  margin: 0 auto 2.5rem;
+  font-style: italic;
+}
+
+/* CTA buttons */
+.hero-btns {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.btn-primary {
+  display: inline-block;
+  background: linear-gradient(135deg, var(--color-accent), var(--color-accent-dark));
+  color: #fff;
+  border-radius: var(--radius-full);
+  padding: 0.75rem 2rem;
+  font-family: var(--font-body);
+  font-size: 14px;
+  font-weight: 800;
+  box-shadow: var(--shadow-btn);
+  transition: transform var(--transition-normal), box-shadow var(--transition-normal);
+}
+
+.btn-primary:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-btn-h);
+}
+
+.btn-ghost {
+  display: inline-block;
+  background: rgba(255, 255, 255, 0.05);
+  color: var(--color-accent);
+  border: 1px solid rgba(167, 139, 250, 0.30);
+  border-radius: var(--radius-full);
+  padding: 0.75rem 2rem;
+  font-family: var(--font-body);
+  font-size: 14px;
+  font-weight: 800;
+  transition: background var(--transition-normal), transform var(--transition-normal);
+}
+
+.btn-ghost:hover {
+  background: rgba(167, 139, 250, 0.12);
+  transform: translateY(-3px);
+}
+
+/* Interest pills */
+.hero-pills {
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 2.5rem;
+}
+
+.pill {
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: var(--radius-full);
+  padding: 6px 16px;
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--color-ink-2);
+}
+
+/* Stat bubbles row */
+.stats-row {
+  display: flex;
+  justify-content: center;
+  gap: var(--space-xl);
+  flex-wrap: wrap;
+  margin-top: var(--space-2xl);
+}
+
+.stat-bubble {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.10);
+  border-radius: var(--radius-lg);
+  padding: var(--space-md) 1.75rem;
+  text-align: center;
+  backdrop-filter: blur(10px);
+}
+
+.stat-num {
+  font-family: var(--font-display);
+  font-size: 30px;
+  background: linear-gradient(135deg, var(--color-accent), var(--color-accent-2));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  line-height: 1.1;
+}
+
+.stat-label {
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--color-muted);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-top: 2px;
+}

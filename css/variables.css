@@ -1,0 +1,61 @@
+/* =========================================
+   variables.css — design tokens & CSS vars
+   ========================================= */
+
+:root {
+  /* --- Colours --- */
+  --color-bg:           #0d0b14;
+  --color-bg-2:         #13101f;
+  --color-surface:      rgba(255, 255, 255, 0.05);
+  --color-surface-2:    rgba(255, 255, 255, 0.08);
+  --color-border:       rgba(255, 255, 255, 0.10);
+  --color-border-hover: rgba(167, 139, 250, 0.30);
+
+  --color-ink:          #f0ecff;
+  --color-ink-2:        #b8aee0;
+  --color-muted:        #6e6490;
+
+  --color-accent:       #a78bfa;   /* purple */
+  --color-accent-dark:  #7c3aed;
+  --color-accent-2:     #f472b6;   /* pink   */
+  --color-accent-3:     #34d399;   /* green  */
+
+  /* blob colours */
+  --blob-1: #4c1d95;
+  --blob-2: #831843;
+  --blob-3: #064e3b;
+  --blob-4: #1e1b4b;
+
+  /* --- Typography --- */
+  --font-display: 'Quicksand', sans-serif;
+  --font-body:    'Fredoka', sans-serif;
+
+  /* --- Spacing scale --- */
+  --space-xs:  0.25rem;
+  --space-sm:  0.5rem;
+  --space-md:  1rem;
+  --space-lg:  1.5rem;
+  --space-xl:  2rem;
+  --space-2xl: 3rem;
+  --space-3xl: 4rem;
+
+  /* --- Radii --- */
+  --radius-sm:   10px;
+  --radius-md:   16px;
+  --radius-lg:   20px;
+  --radius-xl:   28px;
+  --radius-full: 999px;
+
+  /* --- Shadows --- */
+  --shadow-card:  0 20px 50px rgba(0, 0, 0, 0.50);
+  --shadow-btn:   0  8px 28px rgba(124, 58, 237, 0.40);
+  --shadow-btn-h: 0 14px 36px rgba(124, 58, 237, 0.55);
+
+  /* --- Transitions --- */
+  --transition-fast:   0.15s ease;
+  --transition-normal: 0.25s ease;
+
+  /* --- Layout --- */
+  --max-width: 1100px;
+  --nav-height: 62px;
+}

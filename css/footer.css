@@ -1,0 +1,70 @@
+/* =========================================
+   footer.css — centered terminal-style footer
+   ========================================= */
+
+footer {
+  position: relative;
+  z-index: 1;
+  background: rgba(0, 0, 0, 0.30);
+  padding: var(--space-xl) var(--space-xl);
+  border-top: 1px solid var(--color-border);
+  backdrop-filter: blur(10px);
+  
+  /* Centering logic for all aspect ratios */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.terminal-footer {
+  /* This ensures the text stays left-aligned within the centered box */
+  text-align: left;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 13px;
+  line-height: 1.6;
+  color: var(--color-ink-2);
+  
+  /* Optional: prevents the terminal from getting too wide on ultrawide monitors */
+  max-width: var(--max-width); 
+}
+
+/* User @ Hostname */
+.terminal-footer .user {
+  color: var(--color-accent); 
+  font-weight: 700;
+}
+
+/* Directory tilde */
+.terminal-footer .dir {
+  color: var(--color-accent-2);
+}
+
+/* Success status */
+.terminal-footer .status {
+  color: var(--color-accent-3);
+  font-weight: 800;
+}
+
+/* Blinking Cursor */
+.terminal-footer::after {
+  content: "_";
+  display: inline-block;
+  margin-left: 4px;
+  color: var(--color-accent-3);
+  animation: terminalCursor 1s step-end infinite;
+}
+
+@keyframes terminalCursor {
+  from, to { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+/* Mobile adjustments */
+@media (max-width: 768px) {
+  footer {
+    padding: var(--space-lg) var(--space-md);
+  }
+  .terminal-footer {
+    font-size: 11px;
+  }
+}

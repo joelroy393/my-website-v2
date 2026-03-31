@@ -136,9 +136,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
         <div class="modal-media">
           <div class="terminal-box" style="background: #1a1b26; color: #a9b1d6; padding: 1rem; border-radius: 12px; font-family: 'Courier New', monospace; border: 1px solid #414868;">
-            <div style="color: #565f89;">PS C:\Users\royster393> # Fixing Emulator Pathing</div>
-            <div style="color: #73daca;">PS C:\Users\royster393> mklink /J ".\ROMs" "D:\External\Games"</div>
-            <div style="color: #bb9af7;">Junction created for .\ROMs <<===>> D:\External\Games</div>
+            <div style="color: #565f89;">PS C:\\Users\\royster393> # Fixing Emulator Pathing</div>
+            <div style="color: #73daca;">PS C:\\Users\\royster393> mklink /J ".\\ROMs" "D:\\External\\Games"</div>
+            <div style="color: #bb9af7;">Junction created for .\\ROMs <<===>> D:\\External\\Games</div>
             <div style="color: #e0af68;">[WARN] System: Moving to Windsor...</div>
             <div style="color: #73daca;">[SUCCESS] Status: Ready for new horizons.</div>
           </div>

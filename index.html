@@ -4,14 +4,18 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="description" content="Joel Roy — CS undergrad at UWindsor. Cybersecurity, networking, web dev, and more." />
+  
   <title>Joel Roy — Developer & Cybersecurity Enthusiast</title>
 
-  <!-- Google Fonts -->
+  <!-- Preconnect to Google Fonts for faster loading -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&family=Quicksand:wght@300..700&display=swap" rel="stylesheet" />
 
-  <!-- Stylesheets -->
+  <!-- Font Awesome Icons (added in new version) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+
+  <!-- Reset and Core Styles -->
   <link rel="stylesheet" href="css/reset.css" />
   <link rel="stylesheet" href="css/variables.css" />
   <link rel="stylesheet" href="css/base.css" />
@@ -28,7 +32,7 @@
 </head>
 <body>
 
-  <!-- Animated background blobs -->
+  <!-- Animated Background Blobs - decorative only -->
   <div class="blob-bg" aria-hidden="true">
     <div class="blob b1"></div>
     <div class="blob b2"></div>
@@ -36,12 +40,15 @@
     <div class="blob b4"></div>
   </div>
 
-  <!-- NAV -->
+  <!-- NAVIGATION BAR -->
   <nav id="navbar">
     <a href="#" class="nav-logo">Joel Roy</a>
+    
+    <!-- Mobile hamburger menu toggle -->
     <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">
       <span></span><span></span><span></span>
     </button>
+
     <ul class="nav-links">
       <li><a href="#portfolio">Work ✦</a></li>
       <li><a href="#data">Data ✦</a></li>
@@ -54,23 +61,27 @@
 
   <main class="wrap">
 
-    <!-- HERO -->
+    <!-- HERO SECTION -->
     <section class="hero" id="home">
       <div class="hero-badge">
         <span class="dot"></span> Graduating April / May 2026 · Open to roles
       </div>
+      
       <h1 class="hero-title">
         Hey, I'm<br>
         <span class="wave">Joel Roy</span>
       </h1>
+      
       <p class="hero-sub">
-        CS undergrad at UWindsor · cybersecurity, networking &amp; web dev —
+        CS undergrad at UWindsor · cybersecurity, networking &amp; web dev — 
         building cool things and writing about them ✨
       </p>
+
       <div class="hero-btns">
         <a href="#portfolio" class="btn-primary">View My Work →</a>
         <a href="#blog" class="btn-ghost">Read My Blog</a>
       </div>
+
       <div class="hero-pills">
         <span class="pill">🔐 Cybersecurity</span>
         <span class="pill">🌐 Web Dev</span>
@@ -78,38 +89,21 @@
         <span class="pill">📷 Photography</span>
         <span class="pill">📍 Windsor, ON</span>
       </div>
-      <!-- <div class="stats-row">
-        <div class="stat-bubble">
-          <div class="stat-num">Top 500</div>
-          <div class="stat-label">picoCTF worldwide</div>
-        </div>
-        <div class="stat-bubble">
-          <div class="stat-num">4,500+</div>
-          <div class="stat-label">CTF points scored</div>
-        </div>
-        <div class="stat-bubble">
-          <div class="stat-num">99%+</div>
-          <div class="stat-label">data accuracy</div>
-        </div>
-        <div class="stat-bubble">
-          <div class="stat-num">2026</div>
-          <div class="stat-label">graduation year</div>
-        </div>-->
-      </div>
     </section>
 
-    <!-- PORTFOLIO -->
+    <!-- PORTFOLIO SECTION -->
     <section id="portfolio">
       <div class="section-inner">
         <span class="section-label">~ my work ~</span>
         <h2 class="section-title">Things I've Built</h2>
         <p class="section-sub">projects, security challenges, and creative work ✦</p>
 
+        <!-- PicoCTF Achievement Highlight -->
         <div class="ctf-banner">
           <div class="ctf-badge">🏆</div>
           <div class="ctf-text">
             <strong>picoCTF 2026</strong> — Competed as part of the University of Windsor team,
-            scoring <strong>4,500+ points</strong> and ranking in the
+            scoring <strong>4,500+ points</strong> and ranking in the 
             <strong>top 500 out of 9,000+ teams worldwide</strong>.
             Focused on recon, vulnerability identification, and forensics.
           </div>
@@ -200,13 +194,13 @@
       </div>
     </section>
 
-    <!-- DATA & ANALYTICS -->
+    <!-- DATA PORTFOLIO SECTION -->
     <section id="data">
       <div class="section-inner">
         <span class="section-label">~ data portfolio ~</span>
         <h2 class="section-title">Data Engineering & Analytics Projects</h2>
         <p class="section-sub">building real pipelines — Python ETL, SQL Server, Power BI, from raw data to business insights ✦</p>
-
+        
         <div class="data-series-badge">
           <span class="dot" style="background: #38bdf8;"></span>
           Iteration 3 in progress · SQL Server + Python ETL + Power BI
@@ -263,12 +257,13 @@
       </div>
     </section>
 
-    <!-- SKILLS -->
+    <!-- SKILLS SECTION - Fully restored -->
     <section id="skills">
       <div class="section-inner">
         <span class="section-label">~ what I work with ~</span>
         <h2 class="section-title">Technical Skills</h2>
         <p class="section-sub">the tools, languages, and systems I actually use ✦</p>
+        
         <div class="skills-grid">
           <div class="skill-card">
             <div class="skill-card-icon">🔐</div>
@@ -354,12 +349,13 @@
       </div>
     </section>
 
-    <!-- BLOG -->
+    <!-- BLOG SECTION - Fully restored -->
     <section id="blog">
       <div class="section-inner">
         <span class="section-label">~ latest words ~</span>
         <h2 class="section-title">From the Blog</h2>
         <p class="section-sub">thoughts on cybersecurity, tech, and life 🌙</p>
+        
         <div class="blog-stack">
           <article class="blog-card" data-post="pico-ctf">
             <div class="blog-date-bubble">
@@ -420,11 +416,12 @@
       </div>
     </section>
 
-    <!-- ABOUT -->
+    <!-- ABOUT SECTION -->
     <section id="about">
       <div class="section-inner">
         <span class="section-label">~ a little about me ~</span>
         <h2 class="section-title">Hi, I'm Joel 👋</h2>
+        
         <div class="about-wrap">
           <div class="about-img-area">
             <div class="about-photo-wrapper">
@@ -438,22 +435,25 @@
               <div class="about-fact"><span>🎯</span> Graduating April / May 2026</div>
             </div>
           </div>
+
           <div class="about-text">
             <p class="about-body">I'm a Computer Science undergraduate at the University of Windsor, originally from Kuwait. I'm passionate about IT infrastructure, cybersecurity, and industrial automation — and I love the crossover between security and the physical world (IoT, PLCs, home labs).</p>
+            
             <p class="about-body">Outside of code I'm into sim racing, cooking, video gaming, traveling, and video editing. I listen to a lot of Synthwave, Hip-Hop, and Pop — Eminem, Linkin Park, Kavinsky, Bruno Mars, Lil Baby. Big fan of Sci-Fi and Horror films too.</p>
 
             <span class="section-label" style="margin-top: 1.5rem; display: inline-block;">~ hobbies ~</span>
             
+            <!-- Steam with Font Awesome icon (new version) -->
             <div class="about-fact steam-status">
-              <span>🎮</span> 
+              <span><i class="fa-brands fa-steam"></i></span>
               <a href="https://steamcommunity.com/id/joelroy393/" target="_blank" style="color: inherit; text-decoration: none; display: inline-flex; align-items: center; gap: 8px;">
-                <strong>Steam ID:</strong> Royster393 
+                <strong>Steam ID:</strong> Royster393
                 <span class="badge" style="background: var(--color-accent); color: #000; padding: 2px 8px; border-radius: 4px; font-size: 0.75rem; font-weight: 800; text-transform: uppercase;">
                   Est. 2020
                 </span>
               </a>
             </div>
-            
+           
             <div class="hobbies-bubbles">
               <span class="hobby-pill">🏎️ Sim Racing</span>
               <span class="hobby-pill">🎮 Video Gaming</span>
@@ -476,14 +476,14 @@
         </div>
       </div>
     </section>
-    
 
-    <!-- CONTACT -->
+    <!-- CONTACT SECTION -->
     <section id="contact">
       <div class="contact-wrap">
         <span class="section-label">~ let's connect ~</span>
         <h2 class="section-title">Say Hello ✨</h2>
         <p class="section-sub">open to full-time roles, collabs, or just a chat — graduating 2026 ✦</p>
+        
         <form class="contact-form" id="contactForm" novalidate>
           <div class="field-group">
             <input class="c-input" type="text" name="name" placeholder="Your name ✦" required />
@@ -493,33 +493,37 @@
           <textarea class="c-input" name="message" placeholder="Your message... ✦" required></textarea>
           <button type="submit" class="submit-btn">Send it over ✨</button>
         </form>
+
+        <!-- Social links with Font Awesome icons (new version) -->
         <div class="socials">
-          <a class="social-pill" href="mailto:Joelroy393@gmail.com">📧 Email</a>
-          <a class="social-pill" href="https://github.com/royster393" target="_blank" rel="noopener">🐙 GitHub</a>
-          <a class="social-pill" href="https://www.linkedin.com/in/joelroy393/" target="_blank" rel="noopener">💼 LinkedIn</a>
+          <a class="social-pill" href="mailto:Joelroy393@gmail.com"><i class="fa-solid fa-envelope"></i> Email</a>
+          <a class="social-pill" href="https://github.com/royster393" target="_blank" rel="noopener"><i class="fa-brands fa-github"></i> GitHub</a>
+          <a class="social-pill" href="https://www.linkedin.com/in/joelroy393/" target="_blank" rel="noopener"><i class="fa-brands fa-linkedin-in"></i> LinkedIn</a>
+          <a class="social-pill" href="https://www.instagram.com/joelroy_380" target="_blank" rel="noopener"><i class="fa-brands fa-instagram"></i> Instagram</a>
         </div>
       </div>
     </section>
 
   </main>
 
+  <!-- FOOTER -->
   <footer>
     <div class="terminal-footer">
       <span class="user">joel@royster393</span>:<span class="dir">~</span>$ ./check_status --location "Windsor, ON"
       <br>
-      <span class="status">[STATUS: SECURE]</span> — Connection Established 
+      <span class="status">[STATUS: SECURE]</span> — Connection Established
     </div>
   </footer>
 
+  <!-- Blog Modal -->
   <div id="blogModal" class="modal-overlay" aria-hidden="true">
     <div class="modal-content">
       <button class="modal-close" aria-label="Close">×</button>
-      <div id="modalBody" class="modal-body-content">
-        </div>
+      <div id="modalBody" class="modal-body-content"></div>
     </div>
   </div>
 
-  <!-- Scripts -->
+  <!-- JavaScript Files - loaded at the bottom for performance -->
   <script src="js/blobs.js"></script>
   <script src="js/nav.js"></script>
   <script src="js/animations.js"></script>

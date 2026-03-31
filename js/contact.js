@@ -1,89 +1,69 @@
 /**
- * contact.js
- * Basic contact form validation + submission feedback.
- *
- * To actually send emails, swap the submitForm() function with
- * a real service like Formspree, EmailJS, or your own backend.
- *
- * Formspree example:
- *   1. Sign up at https://formspree.io
- *   2. Create a form and copy the endpoint URL
- *   3. Replace FORMSPREE_URL below with your endpoint
+ * Updated contact form with Web3Forms
+ * Works with your existing HTML (id="contactForm")
  */
 
 (function () {
-  const FORMSPREE_URL = 'https://formspree.io/f/YOUR_FORM_ID'; // ← replace this
-
   const form = document.getElementById('contactForm');
   if (!form) return;
 
-  const messageEl = document.createElement('div');
-  messageEl.className = 'form-message';
-  form.appendChild(messageEl);
+  const submitBtn = form.querySelector('button[type="submit"]');
+  if (!submitBtn) return;
 
-  // ── Validation helpers ────────────────────────────────────
-  function isValidEmail(email) {
-    return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+  // Create message element for nice feedback
+  let messageEl = form.querySelector('.form-message');
+  if (!messageEl) {
+    messageEl = document.createElement('div');
+    messageEl.className = 'form-message';
+    form.appendChild(messageEl);
   }
 
-  function showMessage(text, type) {
+  function showMessage(text, type = 'success') {
     messageEl.textContent = text;
     messageEl.className = `form-message ${type}`;
+    
+    // Auto hide after 6 seconds
+    setTimeout(() => {
+      messageEl.className = 'form-message';
+    }, 6000);
   }
 
-  function clearMessage() {
-    messageEl.className = 'form-message';
-  }
-
-  // ── Submit ───────────────────────────────────────────────
   form.addEventListener('submit', async (e) => {
     e.preventDefault();
-    clearMessage();
 
-    const name    = form.querySelector('[name="name"]').value.trim();
-    const email   = form.querySelector('[name="email"]').value.trim();
-    const message = form.querySelector('[name="message"]').value.trim();
+    const formData = new FormData(form);
+    
+    // Required by Web3Forms
+    formData.append("access_key", "24cbc538-2cd8-4e2e-b0cf-a5cdd32b19c9");
 
-    // Client-side validation
-    if (!name) {
-      showMessage('Please enter your name.', 'error');
-      return;
-    }
-    if (!isValidEmail(email)) {
-      showMessage('Please enter a valid email address.', 'error');
-      return;
-    }
-    if (!message) {
-      showMessage('Please write a message.', 'error');
-      return;
-    }
+    // Optional but recommended
+    formData.append("subject", formData.get("subject") || "New Message from joelroy393.com");
+    formData.append("from_name", "Joel Roy Website");   // Appears in your email
 
-    const btn = form.querySelector('.submit-btn');
-    btn.textContent = 'Sending...';
-    btn.disabled = true;
+    const originalText = submitBtn.textContent;
+    submitBtn.textContent = "Sending...";
+    submitBtn.disabled = true;
 
     try {
-      // ── Option A: Formspree ──────────────────────────────
-      // Uncomment and replace URL once you have a Formspree account:
-      //
-      // const res = await fetch(FORMSPREE_URL, {
-      //   method: 'POST',
-      //   headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
-      //   body: JSON.stringify({ name, email, subject: form.querySelector('[name="subject"]').value, message }),
-      // });
-      // if (!res.ok) throw new Error('Server error');
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        body: formData
+      });
 
-      // ── Option B: Demo mode (no backend) ─────────────────
-      await new Promise(resolve => setTimeout(resolve, 800));
+      const data = await response.json();
 
-      showMessage('Message sent! I\'ll get back to you soon ✨', 'success');
-      form.reset();
-    } catch (err) {
-      showMessage('Something went wrong. Try emailing me directly at Joelroy393@gmail.com', 'error');
+      if (response.ok && data.success) {
+        showMessage("Message sent successfully! I'll get back to you soon ✨", "success");
+        form.reset();
+      } else {
+        showMessage(data.message || "Something went wrong. Please try again.", "error");
+      }
+    } catch (error) {
+      console.error(error);
+      showMessage("Network error. You can email me directly at Joelroy393@gmail.com", "error");
     } finally {
-      btn.textContent = 'Send it over ✨';
-      btn.disabled = false;
+      submitBtn.textContent = originalText;
+      submitBtn.disabled = false;
     }
   });
-
 })();
